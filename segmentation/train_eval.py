@@ -152,6 +152,7 @@ def main():
     ap.add_argument("--test_npz", type=str,
                     default="dataprocessing/data/processed/kvasir_test.npz")
 
+
     ap.add_argument("--epochs", type=int, default=3)
     ap.add_argument("--batch", type=int, default=8)
     ap.add_argument("--lr", type=float, default=1e-3)
