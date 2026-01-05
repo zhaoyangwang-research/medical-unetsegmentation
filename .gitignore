@@ -1,24 +1,16 @@
-# Python
-__pycache__/
-*.py[cod]
-
-# Virtual environments
-.venv/
-venv/
-env/
-
-# PyCharm
+# IDE
 .idea/
 
-# OS
+# data & models
+*.npz
+*.pt
+*.pth
+*.bin
+*.zip
+
+# python
+__pycache__/
+*.pyc
+
+# mac
 .DS_Store
-
-# Data / generated files
-dataset.npz
-dataset/
-generation/
-others/
-exploration/
-
-# Jupyter
-.ipynb_checkpoints/

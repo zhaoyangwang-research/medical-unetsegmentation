@@ -1,63 +1,20 @@
-# Multimodal Medical Mini-Research (ROCOv2)
+# Medical U-Net Segmentation
 
-This repository contains a small educational research project exploring **multimodal learning**
-on **radiology images and captions** using the ROCOv2 dataset.
+This repository contains a small medical image segmentation project using a U-Net architecture.
 
-The project builds a **non-diagnostic derived task** (medical image modality classification)
-and compares image-only, text-only, and multimodal approaches.
+## Overview
+The goal of this project is to perform binary medical image segmentation using a convolutional neural network.
+The model is trained and evaluated using the Dice coefficient, which is commonly used in medical image analysis.
 
----
-
-## Task Definition
-
-**Input:**
-- Medical image
-- Corresponding radiology caption
-
-**Output (derived labels):**
-- `ct`
-- `xray`
-- `mri`
-- `ultrasound`
-- `other`
-
-⚠️ This project does **NOT** perform disease diagnosis.
-
----
+## Model
+- Architecture: U-Net
+- Loss function: Weighted Binary Cross-Entropy + Dice loss
+- Evaluation metric: Dice coefficient
 
 ## Dataset
+The project uses preprocessed medical image data stored in `.npz` format.
+Each sample consists of:
+- an input image
+- a corresponding binary segmentation mask
 
-- Dataset: **ROCOv2 (Radiology Objects in Context)**
-- Source: Hugging Face
-- Modality: image + text
-
-The dataset is **streamed**, and a small subset (e.g. 2000 samples) is saved locally
-as `dataset.npz`.
-
-The generated dataset file is **not included** in this repository.
-
----
-
-## Methods
-
-The following baselines are implemented:
-
-1. **Image-only**
-   - CLIP image embeddings
-   - Logistic Regression
-
-2. **Text-only**
-   - TF-IDF on captions
-   - Logistic Regression
-
-3. **Multimodal**
-   - CLIP image embeddings + CLIP text embeddings
-   - Feature concatenation + Logistic Regression
-
----
-
-## Setup
-
-### Option 1: pip
-```bash
-pip install -r requirements.txt
+## Project Structure
